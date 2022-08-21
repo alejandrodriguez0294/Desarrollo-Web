@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Tienda">
+  <ClassDiagramComponents>
+    <Class name="Producto" package="Entidad" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="precio" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getPrecio" returnType="Double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="Double" name="precio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProductoServicio" package="Servicio" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+        <Field name="leer2" type="Scanner" visibility="package"/>
+        <Field name="MapProductos" type="HashMap&lt;Integer, Producto&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cargarProductos" returnType="void" visibility="public"/>
+        <Method name="Actualizar" returnType="void" visibility="public"/>
+        <Method name="Eliminar" returnType="void" visibility="public"/>
+        <Method name="Mostrar" returnType="void" visibility="public"/>
+        <Method name="Menu" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tienda" package="tienda" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="MapProductos" source="Servicio.ProductoServicio" target="Entidad.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;Integer, Producto&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
